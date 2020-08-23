@@ -6,10 +6,10 @@ países, entre otros.
   
 **2. VERSIONAMIENTO**
 
-django v. 2.2.11
-django rest framework v. 3.11.0
-psycopg2 v. 2.8.4
-postgresql v. 11
+* django v. 2.2.11
+* django rest framework v. 3.11.0
+* psycopg2 v. 2.8.4
+* postgresql v. 11
 
 **3. CONFIGURACIÓN - DESPLIEGUE LOCAL**
 
@@ -47,13 +47,13 @@ COUNTRY:
 
 **5. URIs**
 
-GET  -> localhost:8000/trips/ (listar todos los viajes)
-POST -> localhost:8000/trips/ (crear un viaje)
-PUT  -> localhost:8000/trips/{param}/ (Actualizar un viaje)
-GET  -> localhost:8000/trips/count/ (consultar el total de viajes)
-GET  -> localhost:8000/trips/countcity/{param}/ (Consultar el total de viajes por ciudad)
-POST -> localhost:8000/trips/driver_location/ (Crear o actualizar la ubicación del conductor)
-PUT  -> localhost:8000/trips/end/{param}/ (Finalizar un viaje)
+* GET  -> localhost:8000/trips/ (listar todos los viajes)
+* POST -> localhost:8000/trips/ (crear un viaje)
+* PUT  -> localhost:8000/trips/{param}/ (Actualizar un viaje)
+* GET  -> localhost:8000/trips/count/ (consultar el total de viajes)
+* GET  -> localhost:8000/trips/countcity/{param}/ (Consultar el total de viajes por ciudad)
+* POST -> localhost:8000/trips/driver_location/ (Crear o actualizar la ubicación del conductor)
+* PUT  -> localhost:8000/trips/end/{param}/ (Finalizar un viaje)
 
    
 **6. TESTING**
