@@ -47,7 +47,7 @@ COUNTRY:
 
 **5. URIs**
 
-* GET  -> localhost:8000/trips/ (listar todos los viajes)
+* GET  -> localhost:8000/trips/ (listar todos los viajes - con paginación)
 * POST -> localhost:8000/trips/ (crear un viaje)
 * PUT  -> localhost:8000/trips/{param}/ (Actualizar un viaje)
 * GET  -> localhost:8000/trips/count/ (consultar el total de viajes)
