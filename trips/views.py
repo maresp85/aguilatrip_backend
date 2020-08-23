@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.pagination import PageNumberPagination
 
 import datetime
 
@@ -79,8 +80,14 @@ class TripView(APIView):
     def get(self, request, format=None):
 
         trip = Trip.objects.all()
-        serializer = TripSerializer(trip, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+
+        #pagination
+        paginator = PageNumberPagination()
+        paginator.page_size = 10
+        result_page = paginator.paginate_queryset(trip, request)
+
+        serializer = TripSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializer.data)
 
     """ Create a new Trip """
     def post(self, request, format=None):
