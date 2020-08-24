@@ -13,16 +13,12 @@ class City(models.Model):
 
 
 class Car(models.Model):
-    plate = models.CharField(max_length=7, null=False)
-    brand = models.CharField(max_length=30, null=False)
+    plate = models.CharField(max_length=10, null=False)
+    brand = models.CharField(max_length=30, null=True)
 
 
 class Status_trip(models.Model):
     name = models.CharField(max_length=20, null=False)
-
-
-class Check_code(models.Model):
-    code = models.AutoField(primary_key=True)
 
 
 class Trip(models.Model):
@@ -30,7 +26,7 @@ class Trip(models.Model):
     driver = models.ForeignKey(User, null=True, on_delete=models.PROTECT, related_name="driver")
     car = models.ForeignKey(Car, null=True, on_delete=models.PROTECT)
     status = models.ForeignKey(Status_trip, null=False, on_delete=models.PROTECT)
-    check_code = models.ForeignKey(Check_code, null=False, on_delete=models.PROTECT)
+    check_code = models.IntegerField(null=False)
     city = models.ForeignKey(City, null=False, on_delete=models.PROTECT)
     country = models.ForeignKey(Country, null=False, on_delete=models.PROTECT)
     createdAt = models.DateTimeField(default=datetime.datetime.today, null=False)
